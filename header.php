@@ -61,7 +61,8 @@
 	{
 		foreach($array_hlinks[$no] as $hlink)
 		{
-			if(($hlink!='.')&&($hlink!='..'))
+			
+			if(strpos($hlink,'.')===false)
 			{
 				echo
 					'<a href="'.$_SERVER['REQUEST_URI'].$hlink.'">
@@ -77,5 +78,3 @@
 	}
 ?>
 </header>
-
-
