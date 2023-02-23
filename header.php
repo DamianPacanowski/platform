@@ -64,7 +64,7 @@
 			if(($hlink!='.')&&($hlink!='..'))
 			{
 				echo
-					'<a href="'.$_SERVER['REQUEST_URI'].''.$hlink.'">
+					'<a href="'.$_SERVER['REQUEST_URI'].$hlink.'">
 						<div class="menu">
 							<div>
 								'.$hlink.'
