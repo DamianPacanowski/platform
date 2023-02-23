@@ -1,4 +1,4 @@
-<?php
+<?php	
 	if($_SERVER['REQUEST_URI']=='/')
 	{
 		$dir='../'.$_SERVER['SERVER_NAME'];
@@ -39,7 +39,7 @@
 				}
 			}
 		}
-	}		
+	}	
 ?>
 <header>
 	<a href="/">
@@ -57,24 +57,33 @@
 		</div>
 	</a>
 <?php
-	foreach($array_hlinks as $no =>$null)
+	if(isset($array_hlinks))
 	{
-		foreach($array_hlinks[$no] as $hlink)
+		foreach($array_hlinks as $no =>$null)
 		{
-			
-			if(strpos($hlink,'.')===false)
+			foreach($array_hlinks[$no] as $hlink)
 			{
-				echo
-					'<a href="'.$_SERVER['REQUEST_URI'].$hlink.'">
-						<div class="menu">
-							<div>
-								'.$hlink.'
+				if(strpos($hlink,'.')===false)
+				{
+					echo
+						'<a href="'.$_SERVER['REQUEST_URI'].$hlink.'">
+							<div class="menu">
+								<div>
+									'.$hlink.'
+								</div>
 							</div>
-						</div>
-					</a>'
-				;
+						</a>'
+					;
+				}
 			}
 		}
 	}
 ?>
+
+<div class="search">
+	<form>
+		<input type="text" name="search" placeholder="... .. .">
+		<input type="submit" value="szukaj">
+	</form>
+</div>
 </header>
