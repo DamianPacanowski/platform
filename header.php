@@ -79,7 +79,6 @@
 		}
 	}
 ?>
-
 <div class="search">
 	<form>
 		<input type="text" name="search" placeholder="... .. .">
