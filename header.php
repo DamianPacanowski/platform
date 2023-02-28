@@ -33,7 +33,7 @@
 								animation-duration: '.$no.'s;
 								animation-timing-function: ease-out;
 								margin-right:30px;
-	margin-top:30px;
+								margin-top:30px;
 							}
 							@keyframes slide_menu'.$no.' 
 							{
