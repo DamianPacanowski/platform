@@ -14,53 +14,53 @@
 		</div>
 	</a>
 	<div style="position:fixed;top:76px;left:20%;">
-<?php
-	if(isset($array_hlinks))
-	{
-		foreach($array_hlinks as $no =>$null)
+	<?php
+		if(isset($array_hlinks))
 		{
-			foreach($array_hlinks[$no] as $hlink)
+			foreach($array_hlinks as $no =>$null)
 			{
-				if(strpos($hlink,'.')===false)
+				foreach($array_hlinks[$no] as $hlink)
 				{
-					echo
-						'<style>
-							.menu'.$no.'
-							{
-								display:inline-block;
-								font-size:66px;								
-								animation-name: slide_menu'.$no.';
-								animation-duration: '.$no.'s;
-								animation-timing-function: ease-out;
-								margin-right:30px;
-								margin-top:30px;
-							}
-							@keyframes slide_menu'.$no.' 
-							{
-								from 
+					if(strpos($hlink,'.')===false)
+					{
+						echo
+							'<style>
+								.menu'.$no.'
 								{
-									position:fixed;
-									top:-150%;
+									display:inline-block;
+									font-size:66px;								
+									animation-name: slide_menu'.$no.';
+									animation-duration: '.$no.'s;
+									animation-timing-function: ease-out;
+									margin-right:30px;
+									margin-top:30px;
 								}
-								to 
+								@keyframes slide_menu'.$no.' 
 								{
-									top:151%;
+									from 
+									{
+										position:fixed;
+										top:-150%;
+									}
+									to 
+									{
+										top:151%;
+									}
 								}
-							}
-						</style>
-						<a href="'.$_SERVER['REQUEST_URI'].''.$hlink.'">
-							<div class="menu'.$no.'">
-								<div>
-									'.$hlink.'
+							</style>
+							<a href="'.$_SERVER['REQUEST_URI'].''.$hlink.'">
+								<div class="menu'.$no.'">
+									<div>
+										'.$hlink.'
+									</div>
 								</div>
-							</div>
-						</a>'
-					;
+							</a>'
+						;
+					}
 				}
 			}
 		}
-	}
-?>
+	?>
 </header>
 
 
