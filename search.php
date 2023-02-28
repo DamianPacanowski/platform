@@ -136,12 +136,12 @@
 				{
 					if(is_array($Fv2[$Fn2]))
 					{
-						header('location:/'.str_replace('C:/wamp64/'.$_SERVER['SERVER_NAME'].'/','',$Fv2[$Fn2][0]));
+						header('location:/'.str_replace($_SERVER['DOCUMENT_ROOT'].'/','',$Fv2[$Fn2][0]));
 						
 					}
 					else
 					{
-						header('location:/'.str_replace('C:/wamp64/'.$_SERVER['SERVER_NAME'].'/','',$Fv2[$Fn2]));
+						header('location:/'.str_replace($_SERVER['DOCUMENT_ROOT'].'/','',$Fv2[$Fn2]));
 					}
 						
 				}
