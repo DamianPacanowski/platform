@@ -1,5 +1,5 @@
 <?php		
-	if(((getenv("REMOTE_ADDR")=='::1')||(getenv("REMOTE_ADDR")=='123.12.12.123'))&&('xyz123'==='xyz123'))
+	if(((getenv("REMOTE_ADDR")=='::1')||(getenv("REMOTE_ADDR")=='10.81.0.27'))&&('xyz123'==='xyz123'))
 	{			
 		if(((empty(getenv("REMOTE_ADDR")))||(getenv("REMOTE_ADDR")=='')||(getenv("REMOTE_ADDR")==null))
 		||
@@ -31,7 +31,6 @@
 		}
 	}	
 ?>
-
 
 
 
