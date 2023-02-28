@@ -1,0 +1,43 @@
+<?php
+	if($_SERVER['REQUEST_URI']=='/')
+	{
+		$dir='../'.$_SERVER['SERVER_NAME'];
+	}
+	else
+	{
+		$dir='..'.$_SERVER['REQUEST_URI'];
+	}
+	if(is_dir($dir))
+	{
+		$scandir=scandir($dir);
+		foreach($scandir as $_dir)
+		{
+			if(is_dir($dir.'/'.$_dir))
+			{
+				$array_hlinks[]=array($_dir);
+			}
+		}
+	}
+	else
+	{
+		$explode_uri=explode('/',$_SERVER['REQUEST_URI']);		
+		foreach($explode_uri as $uri)
+		{
+			if($uri!='')
+			{
+				$dir='../'.$uri;
+			}
+		}		
+		if(is_dir($dir))
+		{
+			$scandir=scandir($dir);
+			foreach($scandir as $_dir)
+			{
+				if(is_dir($dir.'/'.$_dir))
+				{
+					$array_hlinks[]=array($_dir);
+				}
+			}
+		}
+	}
+?>
